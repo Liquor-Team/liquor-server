@@ -1,5 +1,6 @@
 package liquor.graduation.liquor.controller;
 
+import liquor.graduation.liquor.dto.request.LiquorInformationRequest;
 import liquor.graduation.liquor.dto.response.LiquorDetailsResponse;
 import liquor.graduation.liquor.service.LiquorInformationService;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ public class LiquorController {
     private final LiquorInformationService liquorService;
 
     @GetMapping("/{liquor-name}")
-    public ResponseEntity<LiquorDetailsResponse> getLiquorDetails(@PathVariable String liquorName) {
+    public ResponseEntity<LiquorDetailsResponse> getLiquorDetails(@PathVariable(name="liquor-name") LiquorInformationRequest liquorName) {
         LiquorDetailsResponse response = liquorService.getLiquorInformation(liquorName);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

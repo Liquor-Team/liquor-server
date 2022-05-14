@@ -1,5 +1,6 @@
 package liquor.graduation.liquor.service;
 
+import liquor.graduation.liquor.dto.request.LiquorInformationRequest;
 import liquor.graduation.liquor.dto.response.LiquorDetailsResponse;
 import liquor.graduation.liquor.entity.Liquor;
 import liquor.graduation.liquor.repository.LiquorRepository;
@@ -14,8 +15,8 @@ public class LiquorInformationService {
 
     private final LiquorRepository liquorRepository;
 
-    public LiquorDetailsResponse getLiquorInformation(String liquorName) {
-        List<Liquor> liquorList = liquorRepository.findByEnglishName(liquorName);
+    public LiquorDetailsResponse getLiquorInformation(LiquorInformationRequest liquorName) {
+        List<Liquor> liquorList = liquorRepository.findByEnglishName(liquorName.getLiquorName());
         Liquor liquor = liquorList.size() > 1 ? liquorList.get(0): getOnlyOneLiquor(liquorList);       /** 해놓은 이유 향 후 변경 ***/
         return LiquorDetailsResponse.of(liquor);
     }
