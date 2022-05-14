@@ -8,15 +8,16 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LiquorDetailsResponse {
-    private String name;
+    private String englishName;
+    private String koreanName;
     private String description;
     private String hashtag;
     private String img_url;
 
-
     public static LiquorDetailsResponse of(Liquor liquor) {
         return LiquorDetailsResponse.builder()
-                .name(liquor.getName())
+                .englishName(liquor.getEnglishName())
+                .koreanName(liquor.getKoreanName())
                 .description(liquor.getDescription())
                 .hashtag(liquor.getHashtagName())
                 .img_url(liquor.getImgUrl())

@@ -20,8 +20,11 @@ public class Liquor {
     @Column(name="liquor_id")
     private Long id;
 
-    @Column
-    private String name;
+    @Column(name="name_eng")
+    private String englishName;
+
+    @Column(name="name_kor")
+    private String koreanName;
 
     @Column
     @Lob

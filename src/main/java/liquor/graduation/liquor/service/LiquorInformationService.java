@@ -15,7 +15,7 @@ public class LiquorInformationService {
     private final LiquorRepository liquorRepository;
 
     public LiquorDetailsResponse getLiquorInformation(String liquorName) {
-        List<Liquor> liquorList = liquorRepository.findByName(liquorName);
+        List<Liquor> liquorList = liquorRepository.findByEnglishName(liquorName);
         Liquor liquor = liquorList.size() > 1 ? liquorList.get(0): getOnlyOneLiquor(liquorList);       /** 해놓은 이유 향 후 변경 ***/
         return LiquorDetailsResponse.of(liquor);
     }
