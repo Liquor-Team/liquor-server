@@ -45,10 +45,12 @@ jobs:
         
     - name: Upload to AWS S3
       run: |
-        aws deploy push --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} 
-          --ignore-hidden-files
-          --s3-location s3://${{ env.S3_BUCKET_NAME }}/$GITHUB_SHA.zip
-          --source .
+        aws deploy push \
+        --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }}  \
+        --description "Liquor Server CI" \  
+        --ignore-hidden-files \
+        --s3-location s3://${{ env.S3_BUCKET_NAME }}/$GITHUB_SHA.zip \  
+        --source .
           
     - name: Deploy to AWS EC2 from S3
       run: |
