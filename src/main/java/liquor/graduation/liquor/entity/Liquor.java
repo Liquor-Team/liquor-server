@@ -20,17 +20,17 @@ public class Liquor {
     @Column(name="liquor_id")
     private Long id;
 
-    @Column(name="name_eng")
+    @Column(name="eng_name")
     private String englishName;
 
-    @Column(name="name_kor")
+    @Column(name="kor_name")
     private String koreanName;
 
-    @Column
+    @Column(name="description")
     @Lob
     private String description;
 
-    @Column(name="hashtag_base")
+    @Column(name="hashtag")
     private String hashtagName;
 
     @Column(name="img_url", length = 1000)
