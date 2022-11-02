@@ -1,4 +1,4 @@
-package liquor.graduation.liquor.entity;
+package liquor.graduation.cocktail.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,30 +8,37 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name="liquor")
+@Table(name="cocktail")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Liquor {
+public class Cocktail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
 
-    @Column(name="eng_name")
-    private String englishName;
-
     @Column(name="kor_name")
     private String koreanName;
+
+    @Column(name="eng_name")
+    private String englishName;
 
     @Column(name="description")
     @Lob
     private String description;
 
-    @Column(name="hashtag")
-    private String hashtagName;
+    @Column(name="recipe")
+    @Lob
+    private String recipe;
+
+    @Column(name="hashtag_base")
+    private String hashtagBase;
+
+    @Column(name="hashtag_color")
+    private String hashtagColor;
 
     @Column(name="img_url", length = 1000)
     private String imgUrl;
