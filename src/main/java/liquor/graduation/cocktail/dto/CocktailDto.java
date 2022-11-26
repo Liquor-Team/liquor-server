@@ -1,4 +1,4 @@
-package liquor.graduation.making.dto.response;
+package liquor.graduation.cocktail.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 @Builder
-public class ProductDto {
+public class CocktailDto {
     private String korName;
     private String engName;
     private String imgUrl;

@@ -44,6 +44,8 @@ public class MakingService {
                             .korName(cocktail.getKoreanName())
                             .summary(cocktail.getSummary())
                             .imgUrl(cocktail.getImgUrl())
+                            .description(cocktail.getDescription())
+                            .recipe(cocktail.getRecipe())
                             .build();
             productDtoList.add(productDto);
         }
