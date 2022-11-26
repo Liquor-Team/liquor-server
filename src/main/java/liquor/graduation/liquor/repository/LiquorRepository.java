@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface LiquorRepository extends JpaRepository<Liquor, Long> {
-    List<Liquor> findByEnglishName(String liquorName);
+    List<Liquor> findByIdentifier(String liquorName);
 }

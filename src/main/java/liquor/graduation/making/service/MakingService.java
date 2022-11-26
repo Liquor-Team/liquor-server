@@ -29,7 +29,7 @@ public class MakingService {
     private final MakingRepository makingRepository;
 
     public MakingResponseDto getCocktailListByLiquorName(MakingRequestDto liquorName) {
-        List<Liquor> liquors = liquorRepository.findByEnglishName(liquorName.getLiquor());
+        List<Liquor> liquors = liquorRepository.findByIdentifier(liquorName.getLiquor());
 
         //if(liquors.size() <= 0){}       // TODO 영어이름 질의 결과 존재하지 않을 때 에러 처리 필요.
 

@@ -20,6 +20,9 @@ public class Liquor {
     @Column(name="id")
     private Long id;
 
+    @Column(name = "identifier")
+    private String identifier;
+
     @Column(name="eng_name")
     private String englishName;
 
