@@ -11,4 +11,5 @@ public class ProductDto {
     private String korName;
     private String engName;
     private String imgUrl;
+    private String summary;
 }

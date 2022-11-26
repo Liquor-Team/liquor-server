@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface LiquorRepository extends JpaRepository<Liquor, Long> {
     List<Liquor> findByIdentifier(String liquorName);
+    List<Liquor> findByEnglishName(String liquorName);
 }

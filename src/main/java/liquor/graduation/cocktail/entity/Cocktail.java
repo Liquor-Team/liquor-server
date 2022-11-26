@@ -20,11 +20,17 @@ public class Cocktail {
     @Column(name="id")
     private Long id;
 
+    @Column(name="identifier")
+    private String identifier;
+
     @Column(name="kor_name")
     private String koreanName;
 
     @Column(name="eng_name")
     private String englishName;
+
+    @Column(name="summary")
+    private String summary;
 
     @Column(name="description")
     @Lob

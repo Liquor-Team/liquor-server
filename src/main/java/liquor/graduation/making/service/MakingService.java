@@ -29,7 +29,7 @@ public class MakingService {
     private final MakingRepository makingRepository;
 
     public MakingResponseDto getCocktailListByLiquorName(MakingRequestDto liquorName) {
-        List<Liquor> liquors = liquorRepository.findByIdentifier(liquorName.getLiquor());
+        List<Liquor> liquors = liquorRepository.findByEnglishName(liquorName.getLiquor());
 
         //if(liquors.size() <= 0){}       // TODO 영어이름 질의 결과 존재하지 않을 때 에러 처리 필요.
 
@@ -42,6 +42,7 @@ public class MakingService {
             ProductDto productDto = ProductDto.builder()
                             .engName(cocktail.getEnglishName())
                             .korName(cocktail.getKoreanName())
+                            .summary(cocktail.getSummary())
                             .imgUrl(cocktail.getImgUrl())
                             .build();
             productDtoList.add(productDto);
